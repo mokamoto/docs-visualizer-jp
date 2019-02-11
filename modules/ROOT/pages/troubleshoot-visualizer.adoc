@@ -1,0 +1,48 @@
+= Visualizer のトラブルシューティング
+
+Visualizer の使用中にエラーや問題が発生した場合は、次の解決策を試してください。
+
+== アプリケーションが読み込まれない理由は?
+
+[%header,cols="3*a"]
+|===
+|エラーメッセージ |原因 |解決策
+|`You don’t have access to any ${environment_type} environments. You can request access from your org admin.`
+| 指定された環境が組織またはビジネスグループに設定されていないか、必要な権限がありません。
+| xref:access-management::roles.adoc[ロール権限]の詳細を確認するか、組織のシステム管理者に Runtime Manager の*「CloudHub Network Viewer (CloudHub ネットワーク閲覧者)」*権限を要求します、
+|`There are no services to show in the selected environments. You may need to update your applications' runtime versions so they can appear in the Visualizer.`
+|Visualizer は現在、CloudHub および特定のランタイムを使用するスタンドアロン Mule ランタイムエンジンにリリースされたアプリケーションのみをサポートしています。
+|サポートされている環境にアプリケーションがリリースされているにも関わらず、Visualizer のキャンバスにそれらが表示されない場合は、サポートされている Mule ランタイムエンジンを使用するようにアプリケーションを更新しなければならない可能性があります。xref:setup.adoc[サポートされている Mule ランタイムエンジン]のリストを参照してください。.
+|アプリケーションが表示されない (特定のエラーメッセージは表示されていない)。
+|Visualizer は特定のランタイムのみをサポートしています。
+|一部のアプリケーションが Visualizer のキャンバスまたはサービスリストに表示されていない場合、最初に検索条件を確認します。検索条件に問題がない場合、アプリケーションを表示するには、別のランタイムを使用するようにアプリケーションを更新しなければならない可能性があります。xref:setup.adoc[サポートされているランタイム]のリストを参照してください。.
+|===
+
+== アプリケーションの指標が表示されない理由は?
+
+[%header,cols="3*a"]
+|===
+|エラーメッセージ |原因 |解決策
+|`You can’t view metrics for selected environments. Learn more.`
+|すべてのユーザが Anypoint Visualizer と Anypoint Monitoring に無料でアクセスできますが、最初にアカウントを有効にする必要があります。
+|サポートチケットを申請するか、カスタマーサクセス担当者に連絡してアカウントを有効にするよう依頼してください。
+|`Metrics aren't available for this app. You may need to update its runtime version.`
+|アプリケーションで、Anypoint Monitoring の指標をサポートしている Mule ランタイムエンジンが使用されていません。
+|CloudHub アプリケーションの場合、Anypoint Monitoring をサポートしている `-AM` Mule ランタイムエンジンを使用する必要があります。xref:setup.adoc[サポートされている Mule ランタイムエンジン]のリストを参照してください。
+|===
+
+== 権限の問題が発生している
+
+[%header,cols="3*a"]
+|===
+|エラーメッセージ |原因 |解決策
+|`You don’t have permissions to edit this node. Learn more.`
+|Visualizer を編集するには、*「Visualizer Editor (Visualizer エディタ)」*権限が必要です。
+|Visualizer のさまざまな権限とxref:access-management::roles.adoc#custom-roles[カスタムロール]の設定方法の詳細を確認してください。
+|`Metrics are hidden for this app because you don’t have the “CloudHub viewer” role for its environment. Learn more.`
+|「CloudHub Viewer (CloudHub 閲覧者)」権限がない環境に属するアプリケーションを選択しています。 ノードが表示されている理由は、別のノードとの連動関係があるためです。
+|xref:access-management::roles.adoc[権限の設定]についての詳細を確認してください。.
+|`You cannot customize this service because you don't have the *CloudHub Viewer* role for its environment.`
+|選択したノードは、*「CloudHub Viewer (CloudHub 閲覧者)」*権限がない環境に属しています。 このノードが表示されている理由は、別のノードとの連動関係があるためです。
+|xref:access-management::roles.adoc[権限の設定]についての詳細を確認してください。.
+|===
