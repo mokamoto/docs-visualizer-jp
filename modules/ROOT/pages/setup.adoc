@@ -1,0 +1,88 @@
+= Anypoint Visualizer の設定
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+
+Anypoint Visualizer を使用するために必要なロールと権限を設定し、アプリケーションをリリースするときに考慮すべき点を理解します。
+
+== 権限の設定
+
+Anypoint Visualizer にアクセスするには、次のいずれかの権限を持つロールが割り当てられている必要があります。
+
+* *[Runtime Manager] > [Read Applications (アプリケーションの参照)]*: ユーザはアプリケーションネットワークのグラフを表示できますが、変更することはできません。
+* *[Visualizer] > [Visualizer Editor (Visualizer エディタ)]*: ユーザはアプリケーションネットワークのグラフを表示および変更できます。 +
+xref:access-management::roles.adoc#custom-roles[カスタムロール]を作成して*「Visualizer Editor (Visualizer エディタ)」*権限を割り当てることができます。
+[メモ]
+*「Visualizer Editor (Visualizer エディタ)」*権限は、マスタ組織内でのみ割り当てることができます。
+
+
+== サポートされている CloudHub ランタイムの確認
+
+Anypoint Visualizer には、サポートされている Muleランタイムエンジンにリリースされたアプリケーションからのアクティビティのみが含まれます。Mule アプリケーションまたは API をリリースするときに、リリース対象としてサポートされている Mule ランタイムエンジンを使用していることを確認してください。
+
+Anypoint Visualizer は、*CloudHub* で実行される次の Mule ランタイムエンジンをサポートしています。
+
+* Mule ランタイム、バージョン 3.9.1+
+* Mule ランタイム、バージョン 3.9.1-AM	
+* Mule ランタイム、バージョン 4.1.x
+* Mule ランタイム、バージョン 4.1.x-AM
+
+これらのバージョンは、*[Runtime Manager] > [Runtime Version (ランタイムバージョン)]* にリストされています。ランタイムバージョンドロップダウンで *[Show old patch releases (古いパッチリリースを表示)]* セクションを展開します。
+
+[メモ]
+====
+Anypoint Monitoring の指標は、Mule `-AM` バージョンが実行されるアプリケーションにのみ表示されます。 +
+2018 年 6 月 30 日より前にリリースされた Mule ランタイムエンジンを使用しているアプリケーションの場合、適切な Visualizer エージェントを使用するように Mule ランタイムエンジンを更新する必要もあります。CloudHub アプリケーション、API、およびプロキシのダウンタイムなしでこの更新を実行できます。
+====
+
+== サポートされているスタンドアロン Mule ランタイムエンジンの確認
+
+Anypoint Visualizer は、スタンドアロン Mule ランタイムエンジンのリリースで次の Mule ランタイムエンジンをサポートしています。
+
+* Mule ランタイム、バージョン 3.8.5+
+* Mule ランタイム、バージョン 3.9.1+
+* Mule ランタイム、バージョン 4.1.1+
+
+
+== サポートされているコネクタの確認
+
+Anypoint Visualizer は、特定のコネクタ上のアウトバウンド接続のアクティビティを監視できます。
+
+Mule ランタイムエンジンのバージョン 3.9.x では、次のコネクタがサポートされています。
+
+* Salesforce
+* HTTP/HTTPS
+* データベース
+* Connector DevKit に基づくすべてのコネクタ
+
+Mule ランタイムエンジンのバージョン 4.1.x では、次のコネクタがサポートされています。
+
+* Salesforce
+* HTTP/HTTPS
+* データベース
+* Mule 4 拡張コネクタ
+
+== スタンドアロン Mule ランタイムエンジンの設定
+
+スタンドアロン Mule ランタイムエンジンのリリースをサポートするには、 xref:monitoring::am-installing.adoc[Anypoint Monitoring エージェントをインストール]する必要があります。.
+
+[メモ]
+Anypoint Visualizer は現在、CloudHub またはスタンドアロン Mule ランタイムエンジンでリリースされた Mule アプリケーション、API、およびプロキシをサポートしています。2018 年 12 月 15 日以降、スタンドアロン Mule ランタイムでのアプリケーションのサポートが段階的にロールアウトされています。アクセス権の取得については、カスタマーサクセス担当者にお問い合わせください。
+
+
+== アプリケーションのリリース
+
+Anypoint Visualizer で表示するアプリケーションをリリースする場合、リリース対象としてサポートされているバージョンの Mule ランタイムエンジンを選択していることを確認してください。詳細は、 xref:runtime-manager::index.adoc[Runtime Manager]を参照してください。
+
+アプリケーションを再リリースすると、Anypoint Visualizer によって収集されたすべてのメタデータはそのアプリケーションから削除されます。アプリケーションノードのインバウンド接続数はリセットされます。
+
+== データ収集の無効化
+
+Anypoint Visualizer でメタデータを収集するために使用されるエージェントは、パフォーマンスに影響する可能性があります。アプリケーションのパフォーマンスへの影響を軽減するため、次のいずれかを実行できます。
+
+* デフォルトの Mule ランタイムエンジンを使用してアプリケーションをリリースする。
+* 特定のアプリケーションのデータ収集を無効にする。アプリケーションのデータ収集を無効にするには、アプリケーションを再リリースして次のアプリケーションプロパティを設定します。
++
+----
+anypoint.platform.config.visualizer.agent.enabled=true/false
+----
