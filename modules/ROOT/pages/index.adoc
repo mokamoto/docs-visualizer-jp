@@ -17,11 +17,11 @@ Anypoint Visualizer を使用すると、アプリケーションネットワー
 
 == 使用開始
 
-Anypoint Visualizer にアクセスするには、適切な権限が必要です。 権限の設定方法についての詳細は、 xref:setup.adoc「Anypoint Visualizer の設定」を参照してください。
+Anypoint Visualizer にアクセスするには、適切な権限が必要です。 権限の設定方法についての詳細は、 xref:setup.adoc[Anypoint Visualizer の設定] を参照してください。
 
-Anypoint Visualizer は CloudHub またはスタンドアロン Mule ランタイムエンジン (Mules) にリリースされた Mule アプリケーション、API、およびプロキシからデータを収集し、組み込みプラグインを介してすべての受信および送信接続を検出します。サポートされている Mule でアプリケーション、API、またはプロキシが実行されている限り、関連する連動関係と共に検出されます。Anypoint Visualizer でグラフに表示されるデータが収集される方法についての詳細は、 xref:technical.adoc「Anypoint Visualizer でのアプリケーションデータの収集方法」を参照してください。
+Anypoint Visualizer は CloudHub またはスタンドアロン Mule ランタイムエンジン (Mules) にリリースされた Mule アプリケーション、API、およびプロキシからデータを収集し、組み込みプラグインを介してすべての受信および送信接続を検出します。サポートされている Mule でアプリケーション、API、またはプロキシが実行されている限り、関連する連動関係と共に検出されます。Anypoint Visualizer でグラフに表示されるデータが収集される方法についての詳細は、 xref:technical.adoc[Anypoint Visualizer でのアプリケーションデータの収集方法] を参照してください。
 
-Anypoint Visualizer から、表示する環境を選択したり、アプリケーションをレイヤに配置したり、それらの運用監視情報を調べたり、ノードや接続の表示ラベルをカスタマイズしたりできます。詳細は、 xref:view.adoc「Anypoint Visualizer の使用」を参照してください。
+Anypoint Visualizer から、表示する環境を選択したり、アプリケーションをレイヤに配置したり、それらの運用監視情報を調べたり、ノードや接続の表示ラベルをカスタマイズしたりできます。詳細は、 xref:view.adoc[Anypoint Visualizer の使用] を参照してください。
 
 == 使用事例	
 

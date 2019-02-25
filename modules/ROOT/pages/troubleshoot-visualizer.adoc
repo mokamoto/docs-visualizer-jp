@@ -37,12 +37,12 @@ Visualizer の使用中にエラーや問題が発生した場合は、次の解
 |===
 |エラーメッセージ |原因 |解決策
 |`You don’t have permissions to edit this node. Learn more.`
-|Visualizer を編集するには、*「Visualizer Editor (Visualizer エディタ)」*権限が必要です。
+|Visualizer を編集するには、 *「Visualizer Editor (Visualizer エディタ)」* 権限が必要です。
 |Visualizer のさまざまな権限とxref:access-management::roles.adoc#custom-roles[カスタムロール]の設定方法の詳細を確認してください。
 |`Metrics are hidden for this app because you don’t have the “CloudHub viewer” role for its environment. Learn more.`
 |「CloudHub Viewer (CloudHub 閲覧者)」権限がない環境に属するアプリケーションを選択しています。 ノードが表示されている理由は、別のノードとの連動関係があるためです。
 |xref:access-management::roles.adoc[権限の設定]についての詳細を確認してください。.
 |`You cannot customize this service because you don't have the *CloudHub Viewer* role for its environment.`
-|選択したノードは、*「CloudHub Viewer (CloudHub 閲覧者)」*権限がない環境に属しています。 このノードが表示されている理由は、別のノードとの連動関係があるためです。
+|選択したノードは、 *「CloudHub Viewer (CloudHub 閲覧者)」* 権限がない環境に属しています。 このノードが表示されている理由は、別のノードとの連動関係があるためです。
 |xref:access-management::roles.adoc[権限の設定]についての詳細を確認してください。.
 |===

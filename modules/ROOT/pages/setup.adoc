@@ -11,9 +11,9 @@ Anypoint Visualizer にアクセスするには、次のいずれかの権限を
 
 * *[Runtime Manager] > [Read Applications (アプリケーションの参照)]*: ユーザはアプリケーションネットワークのグラフを表示できますが、変更することはできません。
 * *[Visualizer] > [Visualizer Editor (Visualizer エディタ)]*: ユーザはアプリケーションネットワークのグラフを表示および変更できます。 +
-xref:access-management::roles.adoc#custom-roles[カスタムロール]を作成して*「Visualizer Editor (Visualizer エディタ)」*権限を割り当てることができます。
+xref:access-management::roles.adoc#custom-roles[カスタムロール]を作成して *「Visualizer Editor (Visualizer エディタ)」* 権限を割り当てることができます。
 [メモ]
-*「Visualizer Editor (Visualizer エディタ)」*権限は、マスタ組織内でのみ割り当てることができます。
+*「Visualizer Editor (Visualizer エディタ)」* 権限は、マスタ組織内でのみ割り当てることができます。
 
 
 == サポートされている CloudHub ランタイムの確認
